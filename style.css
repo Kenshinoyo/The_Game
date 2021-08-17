@@ -1,8 +1,16 @@
+
 .square {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
     height: 200px;
     width: 400px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    display: grid
-    background-color: beige;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: teal;
 }
