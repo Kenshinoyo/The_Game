@@ -10,4 +10,6 @@ const gBox = (numberOfSquares) => {
         $('body').append(square);
         }
 }
+
+$( () => gBox(200))
 //})
