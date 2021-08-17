@@ -16,8 +16,22 @@
 <button id="start-button">Start/Pause</button>
 
 <div class=grid>
+    <div id="box"></div>
     <script>
-        gBox(200)
+        
+        function createSquare (numberOfSquares) {
+            var sq = document.createElement('<div>');
+                return sq
+        }
+
+        function appendSquare (.grid, box){
+            box.forEach(createSquare()){
+                parent.appendSquare(box);
+            };
+        }
+
+        var myGrid = document.getElementsByClassName('grid');
+        var boxes = <div></div>
     </script>
 </div>
 
