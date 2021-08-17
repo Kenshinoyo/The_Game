@@ -5,9 +5,9 @@
 
 const gBox = (numberOfSquares) => {
     for(i=0; i < numberOfSquares; i++){
-        let square = $('<div>').addClass('grid');
+        let square = $('<div>').addClass('square');
         square.addClass('background-color');
-        $('body').append(grid);
+        $('body').append(square);
         }
 }
 //})
