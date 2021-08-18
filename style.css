@@ -1,16 +1,16 @@
-
-.square {
-    height: 20px;
-    width: 20px;
-    background-color: red;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .grid {
     height: 200px;
     width: 400px;
     display: flex;
     flex-wrap: wrap;
     background-color: teal;
+}
+
+
+.box {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
 }
