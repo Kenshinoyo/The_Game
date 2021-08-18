@@ -11,6 +11,12 @@
 //         }
 // }
 
+// $(document).ready(gBox(numberOfSquares){
+//     for(i = 0; i < numberOfSquares; i++){
+//         $('grid').append('<div id="div'+ i +'"/>');
+//     }
+// })
+
 // const sBox = (numberOfBoxes) => {
 // for(i = 0; i < numberOfBoxes; i++) 
 
@@ -19,3 +25,8 @@
 //                       w/o "hard coding" it into the index
 
 //})
+
+var name = 'Player'
+function showAlert(){
+    alert('Hi' + name)
+}
