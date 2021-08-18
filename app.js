@@ -17,6 +17,14 @@
 //     }
 // })
 
+var toAdd = document.createDocumentFragment();
+for(i = 0; i < 200; i++){
+    var newDiv = document.createElement('div');
+    newDiv.className = 'grid' +i;
+    newDiv.id = 'gridBoard'
+    toAdd.appendChild(newDiv);
+}
+
 // const sBox = (numberOfBoxes) => {
 // for(i = 0; i < numberOfBoxes; i++) 
 
