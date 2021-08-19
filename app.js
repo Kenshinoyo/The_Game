@@ -16,6 +16,13 @@ $(() => gBox(1)) // <-- This is an "IIFE." It allows a function to be called
 //                       w/o "hard coding" it into the index
 
 
+// const grid = document.querySelector('.grid')
+// let squares = array.from(document.querySelectorAll('.grid div'))
+// const ScoreDisplay = document.querySelectorAll('#score')
+// const StartBtn = document.querySelector('#start-button')
+// const width = 10
+
+
 // $(document).ready(gBox(numberOfSquares){
 //     for(i = 0; i < numberOfSquares; i++){
 //         $('grid').append('<div id="div'+ i +'"/>');
@@ -31,7 +38,7 @@ const sBox = (numberOfBoxes) => { // <-- Function for adding child divs to "grid
         toAdd.appendChild(newDiv);
     }
     
-    document.getElementsByClassName('grid').appendChild(toAdd);
+    document.getElementsByClassName('.grid').appendChild(toAdd);
 }
 
 $(() => sBox(200))
@@ -41,11 +48,14 @@ $(() => sBox(200))
 // for(i = 0; i < numberOfBoxes; i++) 
 
 // }
-
-
-//})
-
 var name = 'Player'
 function showAlert(){
     alert('Hi' + name)
 }
+
+
+
+
+
+//})
+
