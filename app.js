@@ -1,56 +1,40 @@
 // *TETRIS TEMPLATE*
 
 //document.addEventListener('DOMContentLoaded', () => { // <= ensures that the script doesn't launch until the html/DOM has fully loaded
-    // **Code goes here**
+// **Code goes here**
 
-const sBox = (numberOfSquares) => { // <-- Function used for creating the "game board" 
-    for(i=0; i < numberOfSquares; i++){
+const sBox = (numberOfSquares) => { // <-- Function used for creating the "grid squares" within the game board.
+    for (let i = 0; i < numberOfSquares; i++) {  // For loop allows the mass production of element w/o hard coding
         let box = $('<div>');
         box.addClass('box');
         box.attr("id", i)
-        $('.gBoard').append(box);
-        }
+        $('.gBoard').append(box); // The
+    }
 }
 
 
 $(() => sBox(198)) // <-- This is an "IIFE." It allows a function to be called 
 //                       w/o "hard coding" it into the index
- 
 
-const grid = document.querySelector('.grid')
-let squares = Array.from(document.querySelectorAll('.box'))
-const ScoreDisplay = document.querySelectorAll('#score')
-const StartBtn = document.querySelector('#start-button')
+
+const grid = document.querySelector('.grid') //                     ]
+let squares = Array.from(document.querySelectorAll('.box')) //      |   <== shorthand identitiers for key elements 
+const ScoreDisplay = document.querySelectorAll('#score') //         |
+const StartBtn = document.querySelector('#start-button') //         ]
 const width = 10
 
+// The Tetrominoes
+const lTetromino = [
+    [1, width+1, width*2+1, 2],
+    [width, width+1, width+2, width*2+2],
+    [1, width+1, width*2+1, width*2],
+    [width, width, width*2+1, width*2+2]
+]
 
-// $(document).ready(gBox(numberOfSquares){
-//     for(i = 0; i < numberOfSquares; i++){
-//         $('grid').append('<div id="div'+ i +'"/>');
-//     }
-// })
 
 
-// var toAdd = document.createDocumentFragment();
-
-// const sBox = (numberOfBoxes) => { // <-- Function for adding child divs to "grid" class
-//     for(i = 0; i < numberOfBoxes; i++){
-//     let newDiv = document.createElement('div');
-//         toAdd.appendChild(newDiv);
-//     }
-    
-//     document.getElementsByClassName('.grid').appendChild(toAdd);
-// }
-
-// $(() => sBox(200))
-
-// }
-// const sBox = (numberOfBoxes) => {
-// for(i = 0; i < numberOfBoxes; i++) 
-
-// }
-var name = 'Player'
-function showAlert(){
+let name = 'Player'
+function showAlert() {
     alert('Hi' + name)
 }
 
