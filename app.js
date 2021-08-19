@@ -3,13 +3,18 @@
 //document.addEventListener('DOMContentLoaded', () => { // <= ensures that the script doesn't launch until the html/DOM has fully loaded
     // **Code goes here**
 
-// const gBox = (numberOfSquares) => { // <-- Function used for creating the "game board" 
-//     for(i=0; i < numberOfSquares; i++){
-//         let grid = $('<div>').addClass('grid');
-//         grid.addClass('background-color');
-//         $('body').append(grid);
-//         }
-// }
+const gBox = (numberOfSquares) => { // <-- Function used for creating the "game board" 
+    for(i=0; i < numberOfSquares; i++){
+        let grid = $('<div>').addClass('grid');
+        grid.addClass('background-color');
+        $('body').append(grid);
+        }
+}
+
+
+$(() => gBox(1)) // <-- This is an "IIFE." It allows a function to be called 
+//                       w/o "hard coding" it into the index
+
 
 // $(document).ready(gBox(numberOfSquares){
 //     for(i = 0; i < numberOfSquares; i++){
@@ -17,20 +22,26 @@
 //     }
 // })
 
+
 var toAdd = document.createDocumentFragment();
-for(i = 0; i < 200; i++){
-    var newDiv = document.createElement('div');
-    newDiv.className = 'grid' +i;
-    newDiv.id = 'gridBoard'
-    toAdd.appendChild(newDiv);
+
+const sBox = (numberOfBoxes) => { // <-- Function for adding child divs to "grid" class
+    for(i = 0; i < numberOfBoxes; i++){
+    let newDiv = document.createElement('div');
+        toAdd.appendChild(newDiv);
+    }
+    
+    document.getElementsByClassName('grid').appendChild(toAdd);
 }
 
+$(() => sBox(200))
+
+// }
 // const sBox = (numberOfBoxes) => {
 // for(i = 0; i < numberOfBoxes; i++) 
 
 // }
-// $(() => gBox(200)) // <-- This is an "IIFE." It allows a function to be called 
-//                       w/o "hard coding" it into the index
+
 
 //})
 
