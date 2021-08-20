@@ -81,7 +81,13 @@ const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 
 
 let currentPosition = 4
-let current = tetrominoes[0][0]
+let currentRotation = 0
+
+let random = Math.floor(Math.random()*tetrominoes.length)
+
+console.log(random)
+
+let current = tetrominoes[random][0]
 
 function draw() {
     current.forEach(index => {
