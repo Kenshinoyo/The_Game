@@ -2,7 +2,6 @@
 
 //document.addEventListener('DOMContentLoaded', () => { // <= ensures that the script doesn't launch until the html/DOM has fully loaded
 // **Code goes here**
-const width = 10 // <-- width of the grid in squares
 
 let name = 'Player'
 function showAlert() {
@@ -10,11 +9,11 @@ function showAlert() {
 }
 
 
-const sBox = (numberOfSquares) => { // <-- Function used for creating the "grid squares" within the game board.
-    for (let i = 0; i < numberOfSquares; i++) {  // For loop allows the mass production of element w/o hard coding
+const sBox = (numberOfBoxes) => { // <-- Function used for creating the "grid squares" within the game board.
+    for (let i = 0; i < numberOfBoxes; i++) {  // For loop allows the mass production of element w/o hard coding
         let box = $('<div>');
-        box.addClass('box');
-        box.attr("id", i)
+        box.addClass('boxes');
+        // box.attr("id", i)
         $('.gBoard').append(box); // The
     }
 }
@@ -25,7 +24,7 @@ $(() => sBox(198)) // <-- This is an "IIFE." It allows a function to be called
 
 
 const grid = document.querySelector('.grid') //                     ]
-let squares = Array.from(document.querySelectorAll('.box')) //      |   <== shorthand identitiers for key elements 
+let squares = Array.from(document.querySelectorAll('.boxes')) //      |   <== shorthand identitiers for key elements 
 const ScoreDisplay = document.querySelectorAll('#score') //         |
 const StartBtn = document.querySelector('#start-button') //         ]
 
@@ -36,6 +35,7 @@ const StartBtn = document.querySelector('#start-button') //         ]
 // [1,0] [1,1] [1,2] [1,3]
 // [2,0] [2,1] [2,2] [2,3]
 // [3,0] [3,1] [3,2] [3,3]
+const width = 10 // <-- parameter used for determining row/column position
 
 
     
@@ -83,13 +83,13 @@ const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 let currentPosition = 4
 let currentRotation = 0
 
-let random = Math.floor(Math.random()*tetrominoes.length)
+let randomShape = Math.floor(Math.random()*tetrominoes.length)
 
-console.log(random)
+console.log(randomShape)
 
-let current = tetrominoes[random][0]
+let current = tetrominoes[randomShape][0]
 
-function draw() {
+const draw = () => {
     current.forEach(index => {
         squares[currentPosition + index].classList.add('tetromino')
     })
