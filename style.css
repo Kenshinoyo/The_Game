@@ -1,12 +1,12 @@
 .gBoard {
-    height: 60vh;
+    height: 550px;
     width: 200px;
     display: flex;
     flex-wrap: wrap;
     background-color: purple;
 }
 
-.boxes {
+.gBoard div {
     height: 20px;
     width: 20px;
     border: 1px solid black;
