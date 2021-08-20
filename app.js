@@ -4,6 +4,12 @@
 // **Code goes here**
 const width = 10 // <-- width of the grid in squares
 
+let name = 'Player'
+function showAlert() {
+    alert('Hi' + name)
+}
+
+
 const sBox = (numberOfSquares) => { // <-- Function used for creating the "grid squares" within the game board.
     for (let i = 0; i < numberOfSquares; i++) {  // For loop allows the mass production of element w/o hard coding
         let box = $('<div>');
@@ -23,27 +29,67 @@ let squares = Array.from(document.querySelectorAll('.box')) //      |   <== shor
 const ScoreDisplay = document.querySelectorAll('#score') //         |
 const StartBtn = document.querySelector('#start-button') //         ]
 
-// The Tetrominoes
-const tetrominoes = [lTetromino, zTetromino, oTetromino, iTetromino, tTetromino]
+// **THE TETROMINOES**
 
-// Tetrimino Key:
-// [0,0] [0,1] [0,2]
-// [1,0] [1,1] [1,2]
-// [2,0] [2,1] [2,2]
-
-const lTetromino = [
-    [1, width+1, width*2+1, 2], // <-- Using the "width" var turns these values into makeshift (x, y) coordinates(width+1 = 11 = (1, 1))
-    [width, width+1, width+2, width*2+2],
-    [1, width+1, width*2+1, width*2],
-    [width, width, width*2+1, width*2+2]
-]
+// Tetromino Key:
+// [0,0] [0,1] [0,2] [0,3]
+// [1,0] [1,1] [1,2] [1,3]
+// [2,0] [2,1] [2,2] [2,3]
+// [3,0] [3,1] [3,2] [3,3]
 
 
+    
+// Each position in the individual tetromino arrays is a "rotation"
+// EX: lTetrimino[2] = "rotation #2"
 
-let name = 'Player'
-function showAlert() {
-    alert('Hi' + name)
+    lTetromino = [
+        [1, width+1, width*2+1, 2], // <-- Using the "width" var turns these values into makeshift (x, y) coordinates(width+1 = 11 = (1, 1))
+        [width, width+1, width+2, width*2+2], 
+        [1, width+1, width*2+1, width*2],
+        [width, width, width*2+1, width*2+2]
+    ],
+
+    zTetromino = [
+        [0, width, width+1, width*2+1],
+        [width+1, width+2, width*2, width*2+1],
+        [0, width, width+1, width*2+1],
+        [width+1, width+2, width*2, width*2+1]
+    ],
+
+    tTetromino = [
+        [1, width, width+1, width+2],
+        [1, width+1, width+2, width*2+1],
+        [width, width+1, width+2, width*2+1],
+        [1, width, width+1, width*2+1]
+    ],
+
+    oTetromino = [ //<-- "oTetromino" is the "square" tetromino
+        [0, 1, width, width+1],
+        [0, 1, width, width+1],
+        [0, 1, width, width+1],
+        [0, 1, width, width+1]
+    ],
+
+    iTetromino = [
+        [1, width+1, width*2+1, width*3+1],
+        [width, width+1, width+2, width+3],
+        [1, width+1, width*2+1, width*3+1],
+        [width, width+1, width+2, width+3]
+    ]
+
+const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
+
+
+let currentPosition = 4
+let current = tetrominoes[0][0]
+
+function draw() {
+    current.forEach(index => {
+        squares[currentPosition + index].classList.add('tetromino')
+    })
 }
+
+draw()
 
 
 
